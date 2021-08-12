@@ -264,6 +264,7 @@ jobs:
       git:
         submodules: false # avoid cloning ethereum/tests
       script:
+<<<<<<< HEAD
         - go run build/ci.go purge -store gethstore/builds -days 14# Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -1210,3 +1211,6 @@ jobs:
       #   with:
       #     name: cucumber-${{ inputs.type }}-report
       #     path: packages/blockchain-extension/cucumber/report/**
+=======
+        - go run build/ci.go purge -store gethstore/builds -days 14
+>>>>>>> 00df455798bf61edaac8190c7db9215fa285677a
