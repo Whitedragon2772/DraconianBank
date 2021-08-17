@@ -2,9 +2,8 @@
 title: Managing Your Accounts
 sort_key: B
 ---
-
 **WARNING**
-Remember your password. 
+Remember your password.
 
 If you lose the password you use to encrypt your account, you will not be able to access that account.
 Repeat: It is NOT possible to access your account without a password and there is no _forgot my password_ option here. Do not forget it.
@@ -29,7 +28,7 @@ or import). Without it you are not able to unlock your account.
 Note that exporting your key in unencrypted format is NOT supported.
 
 Keys are stored under `<DATADIR>/keystore`. Make sure you backup your keys regularly! See
-[DATADIR backup & restore](../install-and-build/backup-restore)
+[DATADIR backup &amp; restore](../install-and-build/backup-restore)
 for more information. If a custom datadir and keystore option are given the keystore
 option takes preference over the datadir option.
 
@@ -53,6 +52,7 @@ COMMANDS:
 ```
 
 You can get info about subcommands by `geth account <command> --help`.
+
 ```
 $ geth account list --help
 list [command options] [arguments...]
@@ -67,9 +67,10 @@ OPTIONS:
 Accounts can also be managed via the [Javascript Console](../interface/javascript-console)
 
 ## Examples
+
 ### Interactive use
 
-#### creating an account 
+#### creating an account
 
 ```
 $ geth account new
@@ -91,7 +92,7 @@ Account #1: {9acb9ff906641a434803efb474c96a837756287f} keystore:///tmp/mykeystor
 #### Import private key into a node with a custom datadir
 
 ```
-$ geth account import --datadir /someOtherEthDataDir ./key.prv
+ geth account import --datadir /someOtherEthDataDir ./key.prv
 The new account will be encrypted with a passphrase.
 Please enter a passphrase now.
 Passphrase:
@@ -113,7 +114,7 @@ Repeat Passphrase:
 0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b
 ```
 
-### Non-interactive use 
+### Non-interactive use
 
 You supply a plaintext password file as argument to the `--password` flag. The data in the
 file consists of the raw characters of the password, followed by a single newline.
@@ -246,18 +247,20 @@ Account #0: {5afdd78bdacb56ab1dad28741ea2a0e47fe41331} keystore:///tmp/mykeystor
 Account #1: {9acb9ff906641a434803efb474c96a837756287f} keystore:///tmp/mykeystore/UTC--2017-04-28T08-46-52.180688336Z--9acb9ff906641a434803efb474c96a837756287f
 ```
 
-to list your accounts in order of creation. 
+to list your accounts in order of creation.
 
 **Note**:
-This order can change if you copy keyfiles from other nodes, so make sure you either do not rely on indexes or make sure if you copy keys you check and update your account indexes in your scripts. 
+This order can change if you copy keyfiles from other nodes, so make sure you either do not rely on indexes or make sure if you copy keys you check and update your account indexes in your scripts.
 
 When using the console:
+
 ```
 > eth.accounts
 ["0x5afdd78bdacb56ab1dad28741ea2a0e47fe41331", "0x9acb9ff906641a434803efb474c96a837756287f"]
 ```
 
 or via RPC:
+
 ```
 # Request
 $ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1} http://127.0.0.1:8545'
@@ -278,6 +281,7 @@ will unlock the first account. This is useful when you created your account
 programmatically, you do not need to know the actual account to unlock it.
 
 Create account and start node with account unlocked:
+
 ```
 geth account new --password <(echo this is not secret!) 
 geth --password <(echo this is not secret!) --unlock primary --rpccorsdomain localhost --verbosity 6 2>> geth.log 
@@ -308,12 +312,14 @@ is logged, so you may compromise your account. You have been warned.
 ### Checking account balances
 
 To check your the etherbase account balance:
+
 ```
 > web3.fromWei(eth.getBalance(eth.coinbase), "ether")
 6.5
 ```
 
 Print all balances with a JavaScript function:
+
 ```
 function checkAllBalances() {
     var totalBal = 0;
@@ -326,7 +332,9 @@ function checkAllBalances() {
     console.log("  Total balance: " + totalBal + " ether");
 };
 ```
+
 That can then be executed with:
+
 ```
 > checkAllBalances();
   eth.accounts[0]: 0xd1ade25ccd3d550a7eb532ac759cac7be09c2719 	balance: 63.11848 ether
