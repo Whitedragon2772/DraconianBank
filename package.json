@@ -1,0 +1,26 @@
+{
+  "name": "draconianbank",
+  "version": "1.0.0",
+  "description": "Audio NFT Exchange",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "DGN"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Whitedragon2772/DraconianBank.git"
+  },
+  "keywords": [
+    "Draconian"
+  ],
+  "author": "Nirvana Lifstyle inc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Whitedragon2772/DraconianBank/issues"
+  },
+  "homepage": "https://github.com/Whitedragon2772/DraconianBank#readme"
+}
